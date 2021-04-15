@@ -1,4 +1,4 @@
-set project_folder_name_CFG1 MiV_CFG1_BD
+set project_folder_name_CFG1 MIV_CFG1_BD
 set project_dir_CFG1 "./$project_folder_name_CFG1"
 set Libero_project_name_CFG1 PF_Everest_ES_MiV_RV32IMAF_CFG1_BaseDesign
 
@@ -62,23 +62,23 @@ proc  base_design_built { }\
 
 proc download_cores_all_cfgs  { }\
 {
-	download_core -vlnv {Actel:DirectCore:CoreUARTapb:5.6.102} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:CoreUARTapb:5.7.100} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:DirectCore:CoreTimer:2.0.103} -location {www.microchip-ip.com/repositories/DirectCore}
-	download_core -vlnv {Actel:DirectCore:CORERESET_PF:2.2.107} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:CORERESET_PF:2.3.100} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:DirectCore:COREJTAGDEBUG:3.1.100} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:DirectCore:CoreGPIO:3.2.102} -location {www.microchip-ip.com/repositories/DirectCore}
-	download_core -vlnv {Actel:DirectCore:COREAXITOAHBL:3.5.100} -location {www.microchip-ip.com/repositories/DirectCore}
-	download_core -vlnv {Actel:DirectCore:CoreAPB3:4.1.100} -location {www.microchip-ip.com/repositories/DirectCore}
-	download_core -vlnv {Actel:DirectCore:COREAHBTOAPB3:3.1.100} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:COREAXITOAHBL:3.6.101} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:CoreAPB3:4.2.100} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:COREAHBTOAPB3:3.2.101} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Actel:SystemBuilder:PF_SRAM_AHBL_AXI:1.2.108} -location {www.microchip-ip.com/repositories/SgCore} 
 	download_core -vlnv {Actel:SgCore:PF_OSC:1.0.102} -location {www.microchip-ip.com/repositories/SgCore}
-	download_core -vlnv {Actel:SgCore:PF_INIT_MONITOR:2.0.203} -location {www.microchip-ip.com/repositories/SgCore}
+	download_core -vlnv {Actel:SgCore:PF_INIT_MONITOR:2.0.204} -location {www.microchip-ip.com/repositories/SgCore}
 	download_core -vlnv {Microsemi:MiV:MIV_RV32:3.0.100} -location {www.microchip-ip.com/repositories/DirectCore}
 	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AHB:2.3.100} -location {www.microchip-ip.com/repositories/DirectCore} 
 	download_core -vlnv {Microsemi:MiV:MIV_RV32IMA_L1_AXI:2.1.100} -location {www.microchip-ip.com/repositories/DirectCore} 
 	download_core -vlnv {Microsemi:MiV:MIV_RV32IMAF_L1_AHB:2.1.100} -location {www.microchip-ip.com/repositories/DirectCore} 
 	download_core -vlnv {Actel:SgCore:PF_CCC:2.2.100} -location {www.microchip-ip.com/repositories/SgCore}
-	download_core -vlnv {Actel:DirectCore:CoreAHBLite:5.4.102} -location {www.microchip-ip.com/repositories/DirectCore}
+	download_core -vlnv {Actel:DirectCore:CoreAHBLite:5.5.101} -location {www.microchip-ip.com/repositories/DirectCore}
 }
 
 proc pre_configure_place_and_route { }\
@@ -116,6 +116,7 @@ if {"$config" == "CFG1"} then {
         base_design_built
 	}
 }
+
 
 
 if {"$design_flow_stage" == "SYNTHESIZE"} then {
@@ -181,7 +182,7 @@ if {"$design_flow_stage" == "SYNTHESIZE"} then {
 
 		export_prog_job \
 			-job_file_name {PF_Everest_ES_MiV_RV32IMAF_CFG1_BaseDesign} \
-			-export_dir {./MiV_CFG1_BD/designer/BaseDesign/export} \
+			-export_dir {./MIV_CFG1_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}
 		save_project
