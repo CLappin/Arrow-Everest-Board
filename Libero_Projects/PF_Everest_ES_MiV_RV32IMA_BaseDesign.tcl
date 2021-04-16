@@ -1,10 +1,10 @@
 set project_folder_name_CFG1 MIV_CFG1_BD
 set project_dir_CFG1 "./$project_folder_name_CFG1"
-set Libero_project_name_CFG1 PF_Everest_ES_MiV_RV32IMA_CFG1_BaseDesign
+set Libero_project_name_CFG1 PF_Everest_ES_MIV_RV32IMA_CFG1_BaseDesign
 
 set project_folder_name_CFG2  MIV_CFG2_BD
 set project_dir_CFG2 "./$project_folder_name_CFG2"
-set Libero_project_name_CFG2 PF_Everest_ES_MiV_RV32IMA_CFG2_BaseDesign
+set Libero_project_name_CFG2 PF_Everest_ES_MIV_RV32IMA_CFG2_BaseDesign
 
 set config [string toupper [lindex $argv 0]]
 set design_flow_stage [string toupper [lindex $argv 1]]
@@ -63,6 +63,7 @@ proc  base_design_built { }\
 	puts "BaseDesign built."
 	puts "---------------------------------------------------------------------------------------------------------\n"
 }
+
 
 proc download_cores_all_cfgs  { }\
 {
@@ -200,7 +201,7 @@ if {"$design_flow_stage" == "SYNTHESIZE"} then {
 
 	if {"$config" == "CFG1"} then {
 		export_prog_job \
-			-job_file_name {PF_Everest_ES_MiV_RV32IMA_CFG1_BaseDesign} \
+			-job_file_name {PF_Everest_ES_MIV_RV32IMA_CFG1_BaseDesign} \
 			-export_dir {./MIV_CFG1_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}
@@ -208,7 +209,7 @@ if {"$design_flow_stage" == "SYNTHESIZE"} then {
 
 	} else {
 		export_prog_job \
-			-job_file_name {PF_Everest_ES_MiV_RV32IMA_CFG2_BaseDesign} \
+			-job_file_name {PF_Everest_ES_MIV_RV32IMA_CFG2_BaseDesign} \
 			-export_dir {./MIV_CFG2_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}

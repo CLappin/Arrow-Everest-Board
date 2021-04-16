@@ -1,14 +1,14 @@
 set project_folder_name_CFG1 MIV_CFG1_BD
 set project_dir_CFG1 "./$project_folder_name_CFG1"
-set Libero_project_name_CFG1 PF_Everest_ES_MiV_RV32_CFG1_BaseDesign
+set Libero_project_name_CFG1 PF_Everest_ES_MIV_RV32_CFG1_BaseDesign
 
 set project_folder_name_CFG2  MIV_CFG2_BD
 set project_dir_CFG2 "./$project_folder_name_CFG2"
-set Libero_project_name_CFG2 PF_Everest_ES_MiV_RV32_CFG2_BaseDesign
+set Libero_project_name_CFG2 PF_Everest_ES_MIV_RV32_CFG2_BaseDesign
 
 set project_folder_name_CFG3 MIV_CFG3_BD
 set project_dir_CFG3 "./$project_folder_name_CFG3"
-set Libero_project_name_CFG3 PF_Everest_ES_MiV_RV32_CFG3_BaseDesign
+set Libero_project_name_CFG3 PF_Everest_ES_MIV_RV32_CFG3_BaseDesign
 
 
 set config [string toupper [lindex $argv 0]]
@@ -107,6 +107,7 @@ if {"$config" == "CFG1"} then {
 	} else {
 		create_new_project_label
 		new_project -location $project_dir_CFG1 -name $Libero_project_name_CFG1 -project_description {} -block_mode 0 -standalone_peripheral_initialization 0 -instantiate_in_smartdesign 1 -ondemand_build_dh 1 -hdl {VERILOG} -family {PolarFire} -die {MPF300TS_ES} -package {FCG1152} -speed {-1} -die_voltage {1.0} -part_range {EXT} -adv_options {IO_DEFT_STD:LVCMOS 1.8V} -adv_options {RESTRICTPROBEPINS:1} -adv_options {RESTRICTSPIPINS:0} -adv_options {SYSTEM_CONTROLLER_SUSPEND_MODE:0} -adv_options {TEMPR:EXT} -adv_options {VCCI_1.2_VOLTR:EXT} -adv_options {VCCI_1.5_VOLTR:EXT} -adv_options {VCCI_1.8_VOLTR:EXT} -adv_options {VCCI_2.5_VOLTR:EXT} -adv_options {VCCI_3.3_VOLTR:EXT} -adv_options {VOLTR:EXT}
+		download_cores_all_cfgs
 		source ./import/components/IMC_CFG1/import_component_and_constraints_pf_everest_es_rv32imc_cfg1.tcl
 		save_project
         base_design_built
@@ -117,6 +118,7 @@ if {"$config" == "CFG1"} then {
 	} else {
 		create_new_project_label
 		new_project -location $project_dir_CFG2 -name $Libero_project_name_CFG2 -project_description {} -block_mode 0 -standalone_peripheral_initialization 0 -instantiate_in_smartdesign 1 -ondemand_build_dh 1 -hdl {VERILOG} -family {PolarFire} -die {MPF300TS_ES} -package {FCG1152} -speed {-1} -die_voltage {1.0} -part_range {EXT} -adv_options {IO_DEFT_STD:LVCMOS 1.8V} -adv_options {RESTRICTPROBEPINS:1} -adv_options {RESTRICTSPIPINS:0} -adv_options {SYSTEM_CONTROLLER_SUSPEND_MODE:0} -adv_options {TEMPR:EXT} -adv_options {VCCI_1.2_VOLTR:EXT} -adv_options {VCCI_1.5_VOLTR:EXT} -adv_options {VCCI_1.8_VOLTR:EXT} -adv_options {VCCI_2.5_VOLTR:EXT} -adv_options {VCCI_3.3_VOLTR:EXT} -adv_options {VOLTR:EXT}
+		download_cores_all_cfgs
 		source ./import/components/IMC_CFG2/import_component_and_constraints_pf_everest_es_rv32imc_cfg2.tcl
 		save_project
         base_design_built
@@ -127,6 +129,7 @@ if {"$config" == "CFG1"} then {
 	} else {
 		create_new_project_label
 		new_project -location $project_dir_CFG3 -name $Libero_project_name_CFG3 -project_description {} -block_mode 0 -standalone_peripheral_initialization 0 -instantiate_in_smartdesign 1 -ondemand_build_dh 1 -hdl {VERILOG} -family {PolarFire} -die {MPF300TS_ES} -package {FCG1152} -speed {-1} -die_voltage {1.0} -part_range {EXT} -adv_options {IO_DEFT_STD:LVCMOS 1.8V} -adv_options {RESTRICTPROBEPINS:1} -adv_options {RESTRICTSPIPINS:0} -adv_options {SYSTEM_CONTROLLER_SUSPEND_MODE:0} -adv_options {TEMPR:EXT} -adv_options {VCCI_1.2_VOLTR:EXT} -adv_options {VCCI_1.5_VOLTR:EXT} -adv_options {VCCI_1.8_VOLTR:EXT} -adv_options {VCCI_2.5_VOLTR:EXT} -adv_options {VCCI_3.3_VOLTR:EXT} -adv_options {VOLTR:EXT}
+		download_cores_all_cfgs
 		source ./import/components/IMC_CFG3/import_component_and_constraints_pf_everest_es_rv32imc_cfg3.tcl
 		save_project
         base_design_built
@@ -140,6 +143,7 @@ if {"$config" == "CFG1"} then {
 		no_first_argument_entered
 		create_new_project_label
 		new_project -location $project_dir_CFG1 -name $Libero_project_name_CFG1 -project_description {} -block_mode 0 -standalone_peripheral_initialization 0 -instantiate_in_smartdesign 1 -ondemand_build_dh 1 -hdl {VERILOG} -family {PolarFire} -die {MPF300TS_ES} -package {FCG1152} -speed {-1} -die_voltage {1.0} -part_range {EXT} -adv_options {IO_DEFT_STD:LVCMOS 1.8V} -adv_options {RESTRICTPROBEPINS:1} -adv_options {RESTRICTSPIPINS:0} -adv_options {SYSTEM_CONTROLLER_SUSPEND_MODE:0} -adv_options {TEMPR:EXT} -adv_options {VCCI_1.2_VOLTR:EXT} -adv_options {VCCI_1.5_VOLTR:EXT} -adv_options {VCCI_1.8_VOLTR:EXT} -adv_options {VCCI_2.5_VOLTR:EXT} -adv_options {VCCI_3.3_VOLTR:EXT} -adv_options {VOLTR:EXT}
+		download_cores_all_cfgs
 		source ./import/components/IMC_CFG1/import_component_and_constraints_pf_everest_es_rv32imc_cfg1.tcl
 		save_project
         base_design_built
@@ -212,21 +216,21 @@ if {"$design_flow_stage" == "SYNTHESIZE"} then {
 
 	if {"$config" == "CFG1"} then {
 		export_prog_job \
-			-job_file_name {PF_Everest_ES_MiV_RV32_CFG1_BaseDesign} \
+			-job_file_name {PF_Everest_ES_MIV_RV32_CFG1_BaseDesign} \
 			-export_dir {./MIV_CFG1_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}
 		save_project
 	} elseif {"$config" == "CFG2"} then {
 		export_prog_job \
-			-job_file_name {PF_Everest_ES_MiV_RV32_CFG2_BaseDesign} \
+			-job_file_name {PF_Everest_ES_MIV_RV32_CFG2_BaseDesign} \
 			-export_dir {./MIV_CFG2_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}
 		save_project
 	} else {
 		export_prog_job \
-			-job_file_name {PF_Everest_ES_MiV_RV32_CFG3_BaseDesign} \
+			-job_file_name {PF_Everest_ES_MIV_RV32_CFG3_BaseDesign} \
 			-export_dir {./MIV_CFG3_BD/designer/BaseDesign/export} \
 			-bitstream_file_type {TRUSTED_FACILITY} \
 			-bitstream_file_components {}
